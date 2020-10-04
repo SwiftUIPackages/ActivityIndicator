@@ -1,42 +1,18 @@
-# ActivityIndicator
+//
+//  UsageView.swift
+//  Demo
+//
+//  Created by Seyed Mojtaba Hosseini Zeidabadi on 9/29/20.
+//  Copyright © 2020 Chenzook. All rights reserved.
+//
+//  StackOverflow: https://stackoverflow.com/story/mojtabahosseini
+//  Linkedin: https://linkedin.com/in/MojtabaHosseini
+//  GitHub: https://github.com/MojtabaHs
+//
 
-An Elegant And Customizable Pure SwiftUI Activity Indicators.
-
-
-# Examples
-
-Code | Demo
---- | ---
-![Arcs-Code][11] | ![Arcs][1]
-![Blinking-Code][9] | ![Blinking][2]
-![RotatingShapesCode][7] | ![RotatingShapes][3]
-![RowOfShapes-Code][6] | ![RowOfShaoes][4]
-![Bars-Code][10] | ![Bars][5]
-
-
-
-  [1]: https://i.stack.imgur.com/kVFyr.gif
-  [2]: https://i.stack.imgur.com/J9dvw.gif
-  [3]: https://i.stack.imgur.com/zxoqs.gif
-  [4]: https://i.stack.imgur.com/wFRVi.gif
-  [5]: https://i.stack.imgur.com/2TwUG.gif
-  [6]: https://i.stack.imgur.com/gdaNb.png
-  [7]: https://i.stack.imgur.com/PRD5B.png
-  [8]: https://i.stack.imgur.com/DMFLk.png
-  [9]: https://i.stack.imgur.com/xalsy.png
-  [10]: https://i.stack.imgur.com/YHkfX.png
-  [11]: https://i.stack.imgur.com/XLPvH.png
-  
-  ---
-# The Demo Code
-
-Just import the library and use the following code as the `ContentView`
-
-```
 import SwiftUI
-import ActivityIndicator
 
-struct ContentView: View {
+struct UsageView: View {
     var body: some View {
         VStack(spacing: 24) {
 
@@ -80,4 +56,11 @@ struct ContentView: View {
         .foregroundColor(.red)
     }
 }
-```
+
+struct UsageView_Previews: PreviewProvider {
+    static var previews: some View {
+        UsageView()
+    }
+}
+
+
