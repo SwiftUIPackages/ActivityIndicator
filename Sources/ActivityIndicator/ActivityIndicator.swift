@@ -10,6 +10,7 @@ public struct ActivityIndicator: View {
 
     @State var animate: Bool = false
     private let style: AStyle
+    private let color: Color
 
     public var body: some View {
         Group {
@@ -68,31 +69,39 @@ public struct ActivityIndicator: View {
                 )
             }
         }
-            .onAppear { animate = true }
-            .onDisappear { animate = false }
-            .aspectRatio(contentMode: .fit)
+        .foregroundColor(color)
+        .onAppear { animate = true }
+        .onDisappear { animate = false }
+        .aspectRatio(contentMode: .fit)
     }
 
-    public init(style: AStyle = .classic()) {
+    public init(style: AStyle = .classic(), color: Color = Colors.NeonOceanBlue) {
         self.style = style
+        self.color = color
     }
 }
 
 public enum AStyle {
     case arcs(count: UInt = 3, width: CGFloat = 2, spacing: CGFloat = 1)
+    
     case bars(count: UInt = 8,
               spacing: CGFloat = 8,
-              cornerRadius: CGFloat = 8,
+              cornerRadius: CGFloat = 50,
               scaleRange: ClosedRange<Double> = (0.5...1),
               opacityRange: ClosedRange<Double> = (0.25...1))
+    
     case blinking(count: UInt = 8, size: CGFloat = 16)
+    
     case classic(count: UInt = 8, width: CGFloat = 0)
+    
     case rotatingShapes(count: UInt = 6, size: CGFloat = 10, content: AnyView = AnyView(Circle()))
+    
     case rowOfShapes(count: UInt = 5,
                      spacing: CGFloat = 8,
-                     scaleRange: ClosedRange<Double> = (0.75...1),
+                     scaleRange: ClosedRange<Double> = (0.25...1),
                      opacityRange: ClosedRange<Double> = (0.25...1),
                      content: AnyView = AnyView(Circle()))
+    
     case rowOfCircle(count: UInt = 5,
                      spacing: CGFloat = 8,
                      scaleRange: ClosedRange<Double> = (0.75...1),
